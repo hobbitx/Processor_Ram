@@ -1,0 +1,247 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Aluno\Downloads\Pratica 3\Pratica 3 (1)\P3\simulation\modelsim
+valu
+IiAhRPiFQQoH70a8DSlY;^0
+VoSF5G>ic<fCB_0PJVSG5X2
+Z1 dC:\Users\Aluno\Downloads\Pratica 3\Pratica 3 (1)\P3\simulation\modelsim
+Z2 w1561744001
+Z3 8C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/processor.v
+Z4 FC:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/processor.v
+L0 363
+Z5 OV;L;10.1d;51
+r1
+31
+Z6 !s108 1561744108.791000
+Z7 !s107 C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/processor.v|
+Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src|C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/processor.v|
+Z9 o-vlog01compat -work work -O0
+Z10 !s92 -vlog01compat -work work {+incdir+C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src} -O0
+!i10b 1
+!s100 <WFPSo=goIN8MP`C`Q>ce3
+!s85 0
+!s101 -O0
+vcache
+!i10b 1
+!s100 V6TI97KOHdSPg:01OfD3U2
+IMU`U0K:S2lX0_d@dm4bI:1
+VS@L1cmT3[bEO0iXEX[eV62
+R1
+w1561743998
+8C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/cache.v
+FC:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/cache.v
+L0 1
+R5
+r1
+!s85 0
+31
+!s108 1561744110.119000
+!s107 C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/cache.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src|C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/cache.v|
+!s101 -O0
+R9
+R10
+vcache_way
+Ib=eh25=j[<PozjBaa>d7C3
+VnKAOD9>98niJgef;Ncc7o0
+R1
+w1561743989
+8C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/cache_way.v
+FC:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/cache_way.v
+L0 1
+R5
+r1
+31
+R9
+R10
+!i10b 1
+!s100 XVHXWfca6XRFo1^i;0@Sa0
+!s85 0
+!s108 1561744109.947000
+!s107 C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/cache_way.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src|C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/cache_way.v|
+!s101 -O0
+vdecoder
+IQeUjP3cVFHX=RG2aznPlh3
+VUUIDX89:@W;9?o7WJ:?Q=1
+R1
+R2
+R3
+R4
+L0 295
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+!i10b 1
+!s100 h8Z0AZEiX>j@86WNiVmM03
+!s85 0
+!s101 -O0
+vmem_block
+IVM=X`aZ`Qa`RGG^oz?39R0
+VcbG8cQ8G>M6oim59fF^DO2
+R1
+w1561743983
+8C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/mem_block.v
+FC:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/mem_block.v
+L0 1
+R5
+r1
+31
+R9
+R10
+!i10b 1
+!s100 Ch:S0I9Eimzzdba5BaNX21
+!s85 0
+!s108 1561744109.650000
+!s107 C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/mem_block.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src|C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/mem_block.v|
+!s101 -O0
+vmux4_1_16bits
+I4ITfKH<AZIzedZ;UGkTXX1
+VLCzD3aM6W]G]`T:UXim<43
+R1
+R2
+R3
+R4
+L0 303
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+!i10b 1
+!s100 cXE>So2Pl03Jk<YdniUOQ2
+!s85 0
+!s101 -O0
+vPC_reg7
+I=NQQ[l6INB<`A;TCHCDDe2
+V>NOcD@H9l0F=k8C8J5CB@2
+R1
+R2
+R3
+R4
+L0 256
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+n@p@c_reg7
+!i10b 1
+!s100 PkRAObkdaP<I?jWYHlX=Y2
+!s85 0
+!s101 -O0
+vprocessor
+I:NggP?jX`F@FCUAMJc0U92
+VBY2?5A7=hR;b8CidhnPhJ0
+R1
+R2
+R3
+R4
+L0 1
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+!i10b 1
+!s100 cLf47@W_DYGOBl201KENU1
+!s85 0
+!s101 -O0
+vregister16bits
+In7N@98OIYogLgliUmAh^Y1
+VDGY[j?5kH4P098z9Y]6iV2
+R1
+R2
+R3
+R4
+L0 323
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+!i10b 1
+!s100 F]Qk]^gj67YGX6Ffdzb;L0
+!s85 0
+!s101 -O0
+vregister16bits_i
+I??oZU[1B4Tbzn[@>U<O=^3
+VhNk:^eJVB:e7c>E3VjC7a3
+R1
+R2
+R3
+R4
+L0 343
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+!i10b 1
+!s100 _@RF530:OJm]e8bAKRC410
+!s85 0
+!s101 -O0
+vregisterFile
+Iej?H_D99QdCQbaShH=ZOT1
+V3]B`R5hlJ3X_<:mcW8]dj0
+R1
+R2
+R3
+R4
+L0 274
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+nregister@file
+!i10b 1
+!s100 YZ9EWZ[3Ui:GzE9?KPdnL0
+!s85 0
+!s101 -O0
+vsystem
+I_lj>FPdC9Y5WK98cnMn_X0
+VHVTF1M2>?H0?bd@[`>bZL2
+R1
+w1561744005
+8C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/system.v
+FC:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/system.v
+L0 1
+R5
+r1
+31
+R9
+R10
+!i10b 1
+!s100 C]SLU^:V63nOEX]_K1hM:0
+!s85 0
+!s108 1561744108.306000
+!s107 C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/system.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src|C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/system.v|
+!s101 -O0

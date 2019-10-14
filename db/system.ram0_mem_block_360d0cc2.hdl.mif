@@ -1,0 +1,24 @@
+-- begin_signature
+-- mem_block(ADDrBits
+-- 3
+-- WIDTH
+-- 2
+-- DEPTH
+-- 8)
+-- end_signature
+WIDTH=2;
+DEPTH=8;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	7 :	00;
+	6 :	00;
+	5 :	00;
+	4 :	00;
+	3 :	11;
+	2 :	00;
+	1 :	01;
+	0 :	00;
+END;

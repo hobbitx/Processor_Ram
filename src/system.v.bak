@@ -1,0 +1,20 @@
+module system (Clock, Reset, dout, q);
+
+input Clock, Reset;
+output [15:0] dout, q;
+
+wire [15:0] addr;
+wire hit;
+wire w;
+
+
+processor proc1 (q, Reset, Clock, dout, addr, w);
+//cache (input [7:0] dataIn, input [4:0] Address, input clk, input rw, output hit, output [7:0] dataOut);
+
+cache#(16) mem1(dout,addr[4:0],Clock,w,hit,q);
+
+//memory_main mem1 (addr[4:0], dout, w, Clock, q);
+
+
+endmodule
+

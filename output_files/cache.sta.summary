@@ -1,0 +1,101 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'KEY[3]'
+Slack : -8.218
+TNS   : -5739.155
+
+Type  : Slow Model Setup 'processor:proc1|estagio_2[12]'
+Slack : -8.106
+TNS   : -138.864
+
+Type  : Slow Model Setup 'processor:proc1|estagio_4[12]'
+Slack : -4.115
+TNS   : -60.247
+
+Type  : Slow Model Setup 'processor:proc1|estagio_3[14]'
+Slack : -3.871
+TNS   : -52.372
+
+Type  : Slow Model Hold 'processor:proc1|estagio_2[12]'
+Slack : -1.785
+TNS   : -9.229
+
+Type  : Slow Model Hold 'processor:proc1|estagio_4[12]'
+Slack : -1.585
+TNS   : -3.410
+
+Type  : Slow Model Hold 'KEY[3]'
+Slack : -1.498
+TNS   : -77.750
+
+Type  : Slow Model Hold 'processor:proc1|estagio_3[14]'
+Slack : 0.091
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'KEY[3]'
+Slack : -1.222
+TNS   : -944.222
+
+Type  : Slow Model Minimum Pulse Width 'processor:proc1|estagio_2[12]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'processor:proc1|estagio_3[14]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'processor:proc1|estagio_4[12]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Setup 'processor:proc1|estagio_2[12]'
+Slack : -2.931
+TNS   : -47.378
+
+Type  : Fast Model Setup 'KEY[3]'
+Slack : -2.920
+TNS   : -1997.607
+
+Type  : Fast Model Setup 'processor:proc1|estagio_4[12]'
+Slack : -1.298
+TNS   : -16.846
+
+Type  : Fast Model Setup 'processor:proc1|estagio_3[14]'
+Slack : -1.129
+TNS   : -12.844
+
+Type  : Fast Model Hold 'processor:proc1|estagio_2[12]'
+Slack : -1.161
+TNS   : -7.159
+
+Type  : Fast Model Hold 'KEY[3]'
+Slack : -1.106
+TNS   : -228.883
+
+Type  : Fast Model Hold 'processor:proc1|estagio_4[12]'
+Slack : -1.008
+TNS   : -1.933
+
+Type  : Fast Model Hold 'processor:proc1|estagio_3[14]'
+Slack : 0.151
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'KEY[3]'
+Slack : -1.222
+TNS   : -944.222
+
+Type  : Fast Model Minimum Pulse Width 'processor:proc1|estagio_2[12]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'processor:proc1|estagio_3[14]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'processor:proc1|estagio_4[12]'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

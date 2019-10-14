@@ -1,0 +1,35 @@
+module mem_block #(parameter ADDrBits=5, parameter WIDTH=16, parameter DEPTH=32)(addr, Clock, data, wr_en, q);
+
+
+input [ADDrBits-1:0] addr; 
+input [WIDTH-1:0] data;
+input wr_en, Clock;
+output [WIDTH-1:0] q;
+
+reg [WIDTH-1:0] Mem [0:DEPTH-1];
+
+initial
+	begin
+		  Mem[ 5'h0] = 16'hF000; // copy input para 0
+		  Mem[ 5'h1] = 16'h0001;
+		  Mem[ 5'h2] = 16'hF800; //copy input para 4
+		  Mem[ 5'h3] = 16'h0003;
+		  Mem[ 5'h4] = 16'b0000010100000000; // soma 0 com 4 e salva em 2
+		  Mem[ 5'h5] = 16'b1110110100000000; // copia 2 para 6
+		  Mem[ 5'h6] = 16'b1011000100000000; // copia cond 6 para 0
+		  Mem[ 5'h7] = 16'b1100000100000000; // store de reg0 para mem4
+		if(DEPTH > 8)
+		begin 
+		 Mem[ 5'h8] = 16'b1101101000000000; ///load de mem0 para reg5
+		end
+  end
+  
+assign q = Mem[addr];
+
+always @(posedge Clock)
+begin
+  if (wr_en) Mem[addr] = data;
+  
+end
+
+endmodule

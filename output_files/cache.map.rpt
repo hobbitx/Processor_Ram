@@ -1,0 +1,1138 @@
+Analysis & Synthesis report for cache
+Thu Jul 04 16:20:04 2019
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: processor:proc1|registerFile:rf|decoder:dec1
+ 13. Parameter Settings for User Entity Instance: processor:proc1|registerFile:rf|register16bits:register1
+ 14. Parameter Settings for User Entity Instance: processor:proc1|registerFile:rf|register16bits:register2
+ 15. Parameter Settings for User Entity Instance: processor:proc1|registerFile:rf|register16bits:register3
+ 16. Parameter Settings for User Entity Instance: processor:proc1|registerFile:rf|register16bits:register4
+ 17. Parameter Settings for User Entity Instance: processor:proc1|registerFile:rf|register16bits:register5
+ 18. Parameter Settings for User Entity Instance: processor:proc1|registerFile:rf|register16bits:register6
+ 19. Parameter Settings for User Entity Instance: processor:proc1|registerFile:rf|register16bits:register7
+ 20. Parameter Settings for User Entity Instance: processor:proc1|register16bits:regALU
+ 21. Parameter Settings for User Entity Instance: processor:proc1|register16bits:RegDout
+ 22. Parameter Settings for User Entity Instance: processor:proc1|register16bits_i:RegAddress
+ 23. Parameter Settings for User Entity Instance: cache:mem1
+ 24. Parameter Settings for User Entity Instance: cache:mem1|cache_way:way0|mem_block:cache_v0
+ 25. Parameter Settings for User Entity Instance: cache:mem1|cache_way:way1|mem_block:cache_v0
+ 26. Parameter Settings for User Entity Instance: cache:mem1|mem_block:LRU_mem_v
+ 27. Parameter Settings for User Entity Instance: cache:mem1|mem_block:main_memory
+ 28. Port Connectivity Checks: "cache:mem1|mem_block:LRU_mem_v"
+ 29. Port Connectivity Checks: "cache:mem1|cache_way:way0|mem_block:cache_v0"
+ 30. Port Connectivity Checks: "processor:proc1|register16bits_i:RegAddress"
+ 31. Port Connectivity Checks: "processor:proc1|register16bits:regALU"
+ 32. Port Connectivity Checks: "processor:proc1|registerFile:rf|decoder:dec1"
+ 33. Port Connectivity Checks: "processor:proc1"
+ 34. Port Connectivity Checks: "SEG7:hex5"
+ 35. Port Connectivity Checks: "SEG7:hex4"
+ 36. Port Connectivity Checks: "SEG7:hex3"
+ 37. Port Connectivity Checks: "SEG7:hex2"
+ 38. Port Connectivity Checks: "SEG7:hex1"
+ 39. Port Connectivity Checks: "SEG7:hex0"
+ 40. Elapsed Time Per Partition
+ 41. Analysis & Synthesis Messages
+ 42. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Jul 04 16:20:04 2019           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; cache                                           ;
+; Top-level Entity Name              ; system                                          ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 1,887                                           ;
+;     Total combinational functions  ; 1,094                                           ;
+;     Dedicated logic registers      ; 943                                             ;
+; Total registers                    ; 943                                             ;
+; Total pins                         ; 104                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                      ; system             ; cache              ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                 ;
++----------------------------------+-----------------+------------------------+------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                   ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------+---------+
+; src/system.v                     ; yes             ; User Verilog HDL File  ; C:/Users/Aluno/Downloads/P4/P4/src/system.v    ;         ;
+; src/processor.v                  ; yes             ; User Verilog HDL File  ; C:/Users/Aluno/Downloads/P4/P4/src/processor.v ;         ;
+; src/mem_block.v                  ; yes             ; User Verilog HDL File  ; C:/Users/Aluno/Downloads/P4/P4/src/mem_block.v ;         ;
+; src/cache_way.v                  ; yes             ; User Verilog HDL File  ; C:/Users/Aluno/Downloads/P4/P4/src/cache_way.v ;         ;
+; src/cache.v                      ; yes             ; User Verilog HDL File  ; C:/Users/Aluno/Downloads/P4/P4/src/cache.v     ;         ;
+; src/SEG7.v                       ; yes             ; User Verilog HDL File  ; C:/Users/Aluno/Downloads/P4/P4/src/SEG7.v      ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------+---------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 1,887  ;
+;                                             ;        ;
+; Total combinational functions               ; 1094   ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 742    ;
+;     -- 3 input functions                    ; 262    ;
+;     -- <=2 input functions                  ; 90     ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 1064   ;
+;     -- arithmetic mode                      ; 30     ;
+;                                             ;        ;
+; Total registers                             ; 943    ;
+;     -- Dedicated logic registers            ; 943    ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 104    ;
+; Embedded Multiplier 9-bit elements          ; 0      ;
+; Maximum fan-out node                        ; KEY[3] ;
+; Maximum fan-out                             ; 944    ;
+; Total fan-out                               ; 6644   ;
+; Average fan-out                             ; 3.10   ;
++---------------------------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                               ;
++-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node          ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                              ; Library Name ;
++-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+--------------+
+; |system                             ; 1094 (64)         ; 943 (0)      ; 0           ; 0            ; 0       ; 0         ; 104  ; 0            ; |system                                                          ; work         ;
+;    |SEG7:hex0|                      ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|SEG7:hex0                                                ; work         ;
+;    |SEG7:hex1|                      ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|SEG7:hex1                                                ; work         ;
+;    |SEG7:hex2|                      ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|SEG7:hex2                                                ; work         ;
+;    |SEG7:hex3|                      ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|SEG7:hex3                                                ; work         ;
+;    |SEG7:hex4|                      ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|SEG7:hex4                                                ; work         ;
+;    |SEG7:hex5|                      ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|SEG7:hex5                                                ; work         ;
+;    |cache:mem1|                     ; 598 (2)           ; 703 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|cache:mem1                                               ; work         ;
+;       |cache_way:way0|              ; 139 (4)           ; 152 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|cache:mem1|cache_way:way0                                ; work         ;
+;          |mem_block:cache_v0|       ; 135 (135)         ; 152 (152)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|cache:mem1|cache_way:way0|mem_block:cache_v0             ; work         ;
+;       |cache_way:way1|              ; 24 (4)            ; 24 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|cache:mem1|cache_way:way1                                ; work         ;
+;          |mem_block:cache_v0|       ; 20 (20)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|cache:mem1|cache_way:way1|mem_block:cache_v0             ; work         ;
+;       |mem_block:LRU_mem_v|         ; 17 (17)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|cache:mem1|mem_block:LRU_mem_v                           ; work         ;
+;       |mem_block:main_memory|       ; 416 (416)         ; 512 (512)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|cache:mem1|mem_block:main_memory                         ; work         ;
+;    |processor:proc1|                ; 390 (195)         ; 240 (96)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|processor:proc1                                          ; work         ;
+;       |PC_reg7:PC|                  ; 35 (35)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|processor:proc1|PC_reg7:PC                               ; work         ;
+;       |alu:alu1|                    ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|processor:proc1|alu:alu1                                 ; work         ;
+;       |register16bits:RegDout|      ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|processor:proc1|register16bits:RegDout                   ; work         ;
+;       |registerFile:rf|             ; 144 (144)         ; 112 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|processor:proc1|registerFile:rf                          ; work         ;
+;          |register16bits:register1| ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|processor:proc1|registerFile:rf|register16bits:register1 ; work         ;
+;          |register16bits:register2| ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|processor:proc1|registerFile:rf|register16bits:register2 ; work         ;
+;          |register16bits:register3| ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|processor:proc1|registerFile:rf|register16bits:register3 ; work         ;
+;          |register16bits:register4| ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|processor:proc1|registerFile:rf|register16bits:register4 ; work         ;
+;          |register16bits:register5| ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|processor:proc1|registerFile:rf|register16bits:register5 ; work         ;
+;          |register16bits:register6| ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|processor:proc1|registerFile:rf|register16bits:register6 ; work         ;
+;          |register16bits:register7| ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |system|processor:proc1|registerFile:rf|register16bits:register7 ; work         ;
++-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                     ;
++-----------------------------------------------------+--------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal      ; Free of Timing Hazards ;
++-----------------------------------------------------+--------------------------+------------------------+
+; processor:proc1|loadAddress[2]                      ; processor:proc1|Decoder2 ; yes                    ;
+; processor:proc1|storeAddress[2]                     ; processor:proc1|WideOr6  ; yes                    ;
+; processor:proc1|isStore                             ; processor:proc1|WideOr6  ; yes                    ;
+; processor:proc1|loadAddress[3]                      ; processor:proc1|Decoder2 ; yes                    ;
+; processor:proc1|storeAddress[3]                     ; processor:proc1|WideOr6  ; yes                    ;
+; processor:proc1|loadAddress[1]                      ; processor:proc1|Decoder2 ; yes                    ;
+; processor:proc1|storeAddress[1]                     ; processor:proc1|WideOr6  ; yes                    ;
+; processor:proc1|loadAddress[0]                      ; processor:proc1|Decoder2 ; yes                    ;
+; processor:proc1|storeAddress[0]~10                  ; processor:proc1|WideOr6  ; yes                    ;
+; processor:proc1|loadAddress[4]                      ; processor:proc1|Decoder2 ; yes                    ;
+; processor:proc1|storeAddress[4]                     ; processor:proc1|WideOr6  ; yes                    ;
+; processor:proc1|loadAddress[5]                      ; processor:proc1|Decoder2 ; yes                    ;
+; processor:proc1|storeAddress[5]                     ; processor:proc1|WideOr6  ; yes                    ;
+; processor:proc1|loadAddress[6]                      ; processor:proc1|Decoder2 ; yes                    ;
+; processor:proc1|storeAddress[6]                     ; processor:proc1|WideOr6  ; yes                    ;
+; processor:proc1|loadAddress[7]                      ; processor:proc1|Decoder2 ; yes                    ;
+; processor:proc1|storeAddress[7]                     ; processor:proc1|WideOr6  ; yes                    ;
+; processor:proc1|ReadAddressRF1[1]                   ; processor:proc1|Mux3     ; yes                    ;
+; processor:proc1|ReadAddressRF1[2]                   ; processor:proc1|Mux3     ; yes                    ;
+; processor:proc1|ReadAddressRF1[0]                   ; processor:proc1|Mux3     ; yes                    ;
+; processor:proc1|ReadAddressRF2[1]                   ; processor:proc1|Mux3     ; yes                    ;
+; processor:proc1|ReadAddressRF2[2]                   ; processor:proc1|Mux3     ; yes                    ;
+; processor:proc1|ReadAddressRF2[0]                   ; processor:proc1|Mux3     ; yes                    ;
+; processor:proc1|writeEnableRegDout                  ; processor:proc1|WideOr3  ; yes                    ;
+; processor:proc1|writeEnableRegisterFile4            ; processor:proc1|WideOr6  ; yes                    ;
+; processor:proc1|controlAlu[1]                       ; processor:proc1|WideOr4  ; yes                    ;
+; processor:proc1|controlAlu[0]                       ; processor:proc1|WideOr4  ; yes                    ;
+; processor:proc1|copy[2]                             ; processor:proc1|Decoder0 ; yes                    ;
+; processor:proc1|loadAddress[9]                      ; processor:proc1|Decoder2 ; yes                    ;
+; processor:proc1|storeAddress[9]                     ; processor:proc1|WideOr6  ; yes                    ;
+; processor:proc1|loadAddress[8]                      ; processor:proc1|Decoder2 ; yes                    ;
+; processor:proc1|storeAddress[8]                     ; processor:proc1|WideOr6  ; yes                    ;
+; processor:proc1|loadAddress[13]                     ; processor:proc1|Decoder2 ; yes                    ;
+; processor:proc1|storeAddress[13]~13                 ; processor:proc1|WideOr6  ; yes                    ;
+; processor:proc1|loadAddress[14]                     ; processor:proc1|Decoder2 ; yes                    ;
+; processor:proc1|storeAddress[14]~14                 ; processor:proc1|WideOr6  ; yes                    ;
+; processor:proc1|loadAddress[15]                     ; processor:proc1|Decoder2 ; yes                    ;
+; processor:proc1|storeAddress[15]~15                 ; processor:proc1|WideOr6  ; yes                    ;
+; processor:proc1|loadAddress[12]                     ; processor:proc1|Decoder2 ; yes                    ;
+; processor:proc1|storeAddress[12]~12                 ; processor:proc1|WideOr6  ; yes                    ;
+; processor:proc1|loadAddress[10]                     ; processor:proc1|Decoder2 ; yes                    ;
+; processor:proc1|storeAddress[10]                    ; processor:proc1|WideOr6  ; yes                    ;
+; processor:proc1|loadAddress[11]                     ; processor:proc1|Decoder2 ; yes                    ;
+; processor:proc1|storeAddress[11]~11                 ; processor:proc1|WideOr6  ; yes                    ;
+; processor:proc1|copy[3]                             ; processor:proc1|Decoder0 ; yes                    ;
+; processor:proc1|copy[1]                             ; processor:proc1|Decoder0 ; yes                    ;
+; processor:proc1|copy[0]                             ; processor:proc1|Decoder0 ; yes                    ;
+; processor:proc1|copy[4]                             ; processor:proc1|Decoder0 ; yes                    ;
+; processor:proc1|copy[5]                             ; processor:proc1|Decoder0 ; yes                    ;
+; processor:proc1|copy[6]                             ; processor:proc1|Decoder0 ; yes                    ;
+; processor:proc1|copy[7]                             ; processor:proc1|Decoder0 ; yes                    ;
+; processor:proc1|copy[8]                             ; processor:proc1|Decoder0 ; yes                    ;
+; processor:proc1|copy[9]                             ; processor:proc1|Decoder0 ; yes                    ;
+; processor:proc1|copy[10]                            ; processor:proc1|Decoder0 ; yes                    ;
+; processor:proc1|copy[11]                            ; processor:proc1|Decoder0 ; yes                    ;
+; processor:proc1|copy[12]                            ; processor:proc1|Decoder0 ; yes                    ;
+; processor:proc1|copy[13]                            ; processor:proc1|Decoder0 ; yes                    ;
+; processor:proc1|copy[14]                            ; processor:proc1|Decoder0 ; yes                    ;
+; processor:proc1|copy[15]                            ; processor:proc1|Decoder0 ; yes                    ;
+; Number of user-specified and inferred latches = 59  ;                          ;                        ;
++-----------------------------------------------------+--------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                      ;
++------------------------------------------------------+--------------------------------------------------+
+; Register name                                        ; Reason for Removal                               ;
++------------------------------------------------------+--------------------------------------------------+
+; processor:proc1|estagio_1[0]~en                      ; Lost fanout                                      ;
+; processor:proc1|estagio_1[1]~en                      ; Lost fanout                                      ;
+; processor:proc1|estagio_1[2]~en                      ; Lost fanout                                      ;
+; processor:proc1|estagio_1[3]~en                      ; Lost fanout                                      ;
+; processor:proc1|estagio_1[4]~en                      ; Lost fanout                                      ;
+; processor:proc1|estagio_1[5]~en                      ; Lost fanout                                      ;
+; processor:proc1|estagio_1[6]~en                      ; Lost fanout                                      ;
+; processor:proc1|estagio_1[7]~en                      ; Lost fanout                                      ;
+; processor:proc1|estagio_1[8]~en                      ; Lost fanout                                      ;
+; processor:proc1|estagio_1[9]~en                      ; Lost fanout                                      ;
+; processor:proc1|estagio_1[10]~en                     ; Lost fanout                                      ;
+; processor:proc1|estagio_1[11]~en                     ; Lost fanout                                      ;
+; processor:proc1|estagio_1[12]~en                     ; Lost fanout                                      ;
+; processor:proc1|estagio_1[13]~en                     ; Lost fanout                                      ;
+; processor:proc1|estagio_1[14]~en                     ; Lost fanout                                      ;
+; processor:proc1|estagio_1[15]~en                     ; Lost fanout                                      ;
+; cache:mem1|cache_way:way0|mem_block:cache_v0|Mem~18  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way0|mem_block:cache_v0|Mem~38  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way0|mem_block:cache_v0|Mem~58  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way0|mem_block:cache_v0|Mem~78  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way0|mem_block:cache_v0|Mem~98  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way0|mem_block:cache_v0|Mem~118 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way0|mem_block:cache_v0|Mem~138 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way0|mem_block:cache_v0|Mem~158 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~0   ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~1   ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~2   ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~3   ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~4   ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~5   ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~6   ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~7   ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~8   ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~9   ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~10  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~11  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~12  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~13  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~14  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~15  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~18  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~20  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~21  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~22  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~23  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~24  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~25  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~26  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~27  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~28  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~29  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~30  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~31  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~32  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~33  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~34  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~35  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~38  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~40  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~41  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~42  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~43  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~44  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~45  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~46  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~47  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~48  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~49  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~50  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~51  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~52  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~53  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~54  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~55  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~58  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~60  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~61  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~62  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~63  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~64  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~65  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~66  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~67  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~68  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~69  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~70  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~71  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~72  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~73  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~74  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~75  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~78  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~80  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~81  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~82  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~83  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~84  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~85  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~86  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~87  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~88  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~89  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~90  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~91  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~92  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~93  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~94  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~95  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~98  ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~100 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~101 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~102 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~103 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~104 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~105 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~106 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~107 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~108 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~109 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~110 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~111 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~112 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~113 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~114 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~115 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~118 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~120 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~121 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~122 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~123 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~124 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~125 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~126 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~127 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~128 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~129 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~130 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~131 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~132 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~133 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~134 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~135 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~138 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~140 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~141 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~142 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~143 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~144 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~145 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~146 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~147 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~148 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~149 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~150 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~151 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~152 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~153 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~154 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~155 ; Lost fanout                                      ;
+; cache:mem1|cache_way:way1|mem_block:cache_v0|Mem~158 ; Lost fanout                                      ;
+; cache:mem1|mem_block:LRU_mem_v|Mem~3                 ; Merged with cache:mem1|mem_block:LRU_mem_v|Mem~2 ;
+; Total Number of Removed Registers = 161              ;                                                  ;
++------------------------------------------------------+--------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 943   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 16    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 831   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |system|processor:proc1|PC_reg7:PC|Q[15]      ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; Yes        ; |system|processor:proc1|estagio_4[20]         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |system|processor:proc1|comb                  ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |system|option[3]                             ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 64 LEs               ; 16 LEs                 ; No         ; |system|processor:proc1|registerFile:rf|Mux30 ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 64 LEs               ; 16 LEs                 ; No         ; |system|processor:proc1|registerFile:rf|Mux11 ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |system|processor:proc1|Mux4                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:proc1|registerFile:rf|decoder:dec1 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; N              ; 3     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:proc1|registerFile:rf|register16bits:register1 ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:proc1|registerFile:rf|register16bits:register2 ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:proc1|registerFile:rf|register16bits:register3 ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:proc1|registerFile:rf|register16bits:register4 ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:proc1|registerFile:rf|register16bits:register5 ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:proc1|registerFile:rf|register16bits:register6 ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:proc1|registerFile:rf|register16bits:register7 ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:proc1|register16bits:regALU ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:proc1|register16bits:RegDout ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:proc1|register16bits_i:RegAddress ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; n              ; 16    ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cache:mem1 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; NBits          ; 16    ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cache:mem1|cache_way:way0|mem_block:cache_v0 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; ADDrBits       ; 3     ; Signed Integer                                                   ;
+; WIDTH          ; 20    ; Signed Integer                                                   ;
+; DEPTH          ; 8     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cache:mem1|cache_way:way1|mem_block:cache_v0 ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; ADDrBits       ; 3     ; Signed Integer                                                   ;
+; WIDTH          ; 20    ; Signed Integer                                                   ;
+; DEPTH          ; 8     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cache:mem1|mem_block:LRU_mem_v ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; ADDrBits       ; 3     ; Signed Integer                                     ;
+; WIDTH          ; 2     ; Signed Integer                                     ;
+; DEPTH          ; 8     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cache:mem1|mem_block:main_memory ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; ADDrBits       ; 5     ; Signed Integer                                       ;
+; WIDTH          ; 16    ; Signed Integer                                       ;
+; DEPTH          ; 32    ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "cache:mem1|mem_block:LRU_mem_v" ;
++-------+-------+----------+---------------------------------+
+; Port  ; Type  ; Severity ; Details                         ;
++-------+-------+----------+---------------------------------+
+; wr_en ; Input ; Info     ; Stuck at VCC                    ;
++-------+-------+----------+---------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cache:mem1|cache_way:way0|mem_block:cache_v0"                                               ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; data[19..18] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; q[18]        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Port Connectivity Checks: "processor:proc1|register16bits_i:RegAddress" ;
++------+-------+----------+-----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                       ;
++------+-------+----------+-----------------------------------------------+
+; Rin  ; Input ; Info     ; Stuck at VCC                                  ;
++------+-------+----------+-----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "processor:proc1|register16bits:regALU"                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "processor:proc1|registerFile:rf|decoder:dec1"                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; DataOut[7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "processor:proc1"                                                                               ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Daddress[15..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SEG7:hex5"                                                                                                                                                                             ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clock     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; clock[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SEG7:hex4"                                                                                                                                                                             ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clock     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; clock[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SEG7:hex3"                                                                                                                                                                             ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clock     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; clock[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SEG7:hex2"                                                                                                                                                                             ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clock     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; clock[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SEG7:hex1"                                                                                                                                                                             ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clock     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; clock[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SEG7:hex0"                                                                                                                                                                             ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clock     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; clock[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:04     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Jul 04 16:19:58 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off system -c cache
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Warning (12019): Can't analyze file -- file mem_cache.v is missing
+Warning (12019): Can't analyze file -- file mem_block.v is missing
+Warning (10229): Verilog HDL Expression warning at system.v(16): truncated literal to match 8 bits
+Warning (10229): Verilog HDL Expression warning at system.v(17): truncated literal to match 8 bits
+Info (12021): Found 1 design units, including 1 entities, in source file src/system.v
+    Info (12023): Found entity 1: system
+Info (12021): Found 8 design units, including 8 entities, in source file src/processor.v
+    Info (12023): Found entity 1: processor
+    Info (12023): Found entity 2: PC_reg7
+    Info (12023): Found entity 3: registerFile
+    Info (12023): Found entity 4: decoder
+    Info (12023): Found entity 5: mux4_1_16bits
+    Info (12023): Found entity 6: register16bits
+    Info (12023): Found entity 7: register16bits_i
+    Info (12023): Found entity 8: alu
+Info (12021): Found 1 design units, including 1 entities, in source file src/mem_block.v
+    Info (12023): Found entity 1: mem_block
+Info (12021): Found 1 design units, including 1 entities, in source file src/cache_way.v
+    Info (12023): Found entity 1: cache_way
+Info (12021): Found 1 design units, including 1 entities, in source file src/cache.v
+    Info (12023): Found entity 1: cache
+Info (12021): Found 1 design units, including 1 entities, in source file principal.v
+    Info (12023): Found entity 1: principal
+Info (12021): Found 1 design units, including 1 entities, in source file src/seg7.v
+    Info (12023): Found entity 1: SEG7
+Warning (10236): Verilog HDL Implicit Net warning at cache_way.v(15): created implicit net for "dirty_v0"
+Info (12127): Elaborating entity "system" for the top level hierarchy
+Warning (10034): Output port "LEDR[16..2]" at system.v(4) has no driver
+Info (12128): Elaborating entity "SEG7" for hierarchy "SEG7:hex0"
+Warning (10235): Verilog HDL Always Construct warning at SEG7.v(10): variable "dado" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (12128): Elaborating entity "processor" for hierarchy "processor:proc1"
+Warning (10036): Verilog HDL or VHDL warning at processor.v(27): object "controlMux" assigned a value but never read
+Warning (10235): Verilog HDL Always Construct warning at processor.v(115): variable "isLoad" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at processor.v(147): variable "DataIn" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10059): Verilog HDL Case Statement warning at processor.v(156): case item expression never matches the case expression because it contains an 'x' or 'z' value
+Warning (10270): Verilog HDL Case Statement warning at processor.v(126): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at processor.v(124): inferring latch(es) for variable "copy", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at processor.v(124): inferring latch(es) for variable "ReadAddressRF2", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at processor.v(124): inferring latch(es) for variable "ReadAddressRF1", which holds its previous value in one or more paths through the always construct
+Warning (10235): Verilog HDL Always Construct warning at processor.v(178): variable "dataRFOut1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10270): Verilog HDL Case Statement warning at processor.v(169): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at processor.v(165): inferring latch(es) for variable "writeEnableRegDout", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at processor.v(165): inferring latch(es) for variable "loadAddress", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at processor.v(165): inferring latch(es) for variable "controlAlu", which holds its previous value in one or more paths through the always construct
+Warning (10235): Verilog HDL Always Construct warning at processor.v(218): variable "dataRFOut2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10270): Verilog HDL Case Statement warning at processor.v(208): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at processor.v(206): inferring latch(es) for variable "writeEnableRegisterFile4", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at processor.v(206): inferring latch(es) for variable "storeAddress", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at processor.v(206): inferring latch(es) for variable "isStore", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "isStore" at processor.v(206)
+Info (10041): Inferred latch for "storeAddress[0]" at processor.v(206)
+Info (10041): Inferred latch for "storeAddress[1]" at processor.v(206)
+Info (10041): Inferred latch for "storeAddress[2]" at processor.v(206)
+Info (10041): Inferred latch for "storeAddress[3]" at processor.v(206)
+Info (10041): Inferred latch for "storeAddress[4]" at processor.v(206)
+Info (10041): Inferred latch for "storeAddress[5]" at processor.v(206)
+Info (10041): Inferred latch for "storeAddress[6]" at processor.v(206)
+Info (10041): Inferred latch for "storeAddress[7]" at processor.v(206)
+Info (10041): Inferred latch for "storeAddress[8]" at processor.v(206)
+Info (10041): Inferred latch for "storeAddress[9]" at processor.v(206)
+Info (10041): Inferred latch for "storeAddress[10]" at processor.v(206)
+Info (10041): Inferred latch for "storeAddress[11]" at processor.v(206)
+Info (10041): Inferred latch for "storeAddress[12]" at processor.v(206)
+Info (10041): Inferred latch for "storeAddress[13]" at processor.v(206)
+Info (10041): Inferred latch for "storeAddress[14]" at processor.v(206)
+Info (10041): Inferred latch for "storeAddress[15]" at processor.v(206)
+Info (10041): Inferred latch for "writeEnableRegisterFile4" at processor.v(206)
+Info (10041): Inferred latch for "controlAlu[0]" at processor.v(165)
+Info (10041): Inferred latch for "controlAlu[1]" at processor.v(165)
+Info (10041): Inferred latch for "loadAddress[0]" at processor.v(165)
+Info (10041): Inferred latch for "loadAddress[1]" at processor.v(165)
+Info (10041): Inferred latch for "loadAddress[2]" at processor.v(165)
+Info (10041): Inferred latch for "loadAddress[3]" at processor.v(165)
+Info (10041): Inferred latch for "loadAddress[4]" at processor.v(165)
+Info (10041): Inferred latch for "loadAddress[5]" at processor.v(165)
+Info (10041): Inferred latch for "loadAddress[6]" at processor.v(165)
+Info (10041): Inferred latch for "loadAddress[7]" at processor.v(165)
+Info (10041): Inferred latch for "loadAddress[8]" at processor.v(165)
+Info (10041): Inferred latch for "loadAddress[9]" at processor.v(165)
+Info (10041): Inferred latch for "loadAddress[10]" at processor.v(165)
+Info (10041): Inferred latch for "loadAddress[11]" at processor.v(165)
+Info (10041): Inferred latch for "loadAddress[12]" at processor.v(165)
+Info (10041): Inferred latch for "loadAddress[13]" at processor.v(165)
+Info (10041): Inferred latch for "loadAddress[14]" at processor.v(165)
+Info (10041): Inferred latch for "loadAddress[15]" at processor.v(165)
+Info (10041): Inferred latch for "writeEnableRegDout" at processor.v(165)
+Info (10041): Inferred latch for "ReadAddressRF1[0]" at processor.v(124)
+Info (10041): Inferred latch for "ReadAddressRF1[1]" at processor.v(124)
+Info (10041): Inferred latch for "ReadAddressRF1[2]" at processor.v(124)
+Info (10041): Inferred latch for "ReadAddressRF2[0]" at processor.v(124)
+Info (10041): Inferred latch for "ReadAddressRF2[1]" at processor.v(124)
+Info (10041): Inferred latch for "ReadAddressRF2[2]" at processor.v(124)
+Info (10041): Inferred latch for "copy[0]" at processor.v(124)
+Info (10041): Inferred latch for "copy[1]" at processor.v(124)
+Info (10041): Inferred latch for "copy[2]" at processor.v(124)
+Info (10041): Inferred latch for "copy[3]" at processor.v(124)
+Info (10041): Inferred latch for "copy[4]" at processor.v(124)
+Info (10041): Inferred latch for "copy[5]" at processor.v(124)
+Info (10041): Inferred latch for "copy[6]" at processor.v(124)
+Info (10041): Inferred latch for "copy[7]" at processor.v(124)
+Info (10041): Inferred latch for "copy[8]" at processor.v(124)
+Info (10041): Inferred latch for "copy[9]" at processor.v(124)
+Info (10041): Inferred latch for "copy[10]" at processor.v(124)
+Info (10041): Inferred latch for "copy[11]" at processor.v(124)
+Info (10041): Inferred latch for "copy[12]" at processor.v(124)
+Info (10041): Inferred latch for "copy[13]" at processor.v(124)
+Info (10041): Inferred latch for "copy[14]" at processor.v(124)
+Info (10041): Inferred latch for "copy[15]" at processor.v(124)
+Info (12128): Elaborating entity "PC_reg7" for hierarchy "processor:proc1|PC_reg7:PC"
+Info (12128): Elaborating entity "registerFile" for hierarchy "processor:proc1|registerFile:rf"
+Warning (10030): Net "register[7]" at processor.v(295) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "decoder" for hierarchy "processor:proc1|registerFile:rf|decoder:dec1"
+Warning (10230): Verilog HDL assignment warning at processor.v(314): truncated value with size 32 to match size of target (8)
+Info (12128): Elaborating entity "register16bits" for hierarchy "processor:proc1|registerFile:rf|register16bits:register1"
+Info (12128): Elaborating entity "alu" for hierarchy "processor:proc1|alu:alu1"
+Info (12128): Elaborating entity "register16bits_i" for hierarchy "processor:proc1|register16bits_i:RegAddress"
+Warning (10235): Verilog HDL Always Construct warning at processor.v(374): variable "Rin" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at processor.v(375): variable "R" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at processor.v(373): inferring latch(es) for variable "Q", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "Q[0]" at processor.v(373)
+Info (10041): Inferred latch for "Q[1]" at processor.v(373)
+Info (10041): Inferred latch for "Q[2]" at processor.v(373)
+Info (10041): Inferred latch for "Q[3]" at processor.v(373)
+Info (10041): Inferred latch for "Q[4]" at processor.v(373)
+Info (10041): Inferred latch for "Q[5]" at processor.v(373)
+Info (10041): Inferred latch for "Q[6]" at processor.v(373)
+Info (10041): Inferred latch for "Q[7]" at processor.v(373)
+Info (10041): Inferred latch for "Q[8]" at processor.v(373)
+Info (10041): Inferred latch for "Q[9]" at processor.v(373)
+Info (10041): Inferred latch for "Q[10]" at processor.v(373)
+Info (10041): Inferred latch for "Q[11]" at processor.v(373)
+Info (10041): Inferred latch for "Q[12]" at processor.v(373)
+Info (10041): Inferred latch for "Q[13]" at processor.v(373)
+Info (10041): Inferred latch for "Q[14]" at processor.v(373)
+Info (10041): Inferred latch for "Q[15]" at processor.v(373)
+Info (12128): Elaborating entity "cache" for hierarchy "cache:mem1"
+Info (12128): Elaborating entity "cache_way" for hierarchy "cache:mem1|cache_way:way0"
+Warning (10036): Verilog HDL or VHDL warning at cache_way.v(15): object "dirty_v0" assigned a value but never read
+Info (12128): Elaborating entity "mem_block" for hierarchy "cache:mem1|cache_way:way0|mem_block:cache_v0"
+Info (12128): Elaborating entity "mem_block" for hierarchy "cache:mem1|mem_block:LRU_mem_v"
+Warning (10230): Verilog HDL assignment warning at mem_block.v(13): truncated value with size 16 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at mem_block.v(14): truncated value with size 16 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at mem_block.v(15): truncated value with size 16 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at mem_block.v(16): truncated value with size 16 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at mem_block.v(17): truncated value with size 16 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at mem_block.v(18): truncated value with size 16 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at mem_block.v(19): truncated value with size 16 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at mem_block.v(20): truncated value with size 16 to match size of target (2)
+Info (12128): Elaborating entity "mem_block" for hierarchy "cache:mem1|mem_block:main_memory"
+Warning (14026): LATCH primitive "processor:proc1|register16bits_i:RegAddress|Q[1]" is permanently enabled
+Warning (14026): LATCH primitive "processor:proc1|register16bits_i:RegAddress|Q[2]" is permanently enabled
+Warning (14026): LATCH primitive "processor:proc1|register16bits_i:RegAddress|Q[3]" is permanently enabled
+Warning (14026): LATCH primitive "processor:proc1|register16bits_i:RegAddress|Q[4]" is permanently enabled
+Warning (14026): LATCH primitive "processor:proc1|register16bits_i:RegAddress|Q[5]" is permanently enabled
+Warning (14026): LATCH primitive "processor:proc1|register16bits_i:RegAddress|Q[6]" is permanently enabled
+Warning (14026): LATCH primitive "processor:proc1|register16bits_i:RegAddress|Q[7]" is permanently enabled
+Warning (14026): LATCH primitive "processor:proc1|register16bits_i:RegAddress|Q[8]" is permanently enabled
+Warning (14026): LATCH primitive "processor:proc1|register16bits_i:RegAddress|Q[9]" is permanently enabled
+Warning (14026): LATCH primitive "processor:proc1|register16bits_i:RegAddress|Q[10]" is permanently enabled
+Warning (14026): LATCH primitive "processor:proc1|register16bits_i:RegAddress|Q[11]" is permanently enabled
+Warning (14026): LATCH primitive "processor:proc1|register16bits_i:RegAddress|Q[12]" is permanently enabled
+Warning (14026): LATCH primitive "processor:proc1|register16bits_i:RegAddress|Q[13]" is permanently enabled
+Warning (14026): LATCH primitive "processor:proc1|register16bits_i:RegAddress|Q[14]" is permanently enabled
+Warning (14026): LATCH primitive "processor:proc1|register16bits_i:RegAddress|Q[15]" is permanently enabled
+Warning (14026): LATCH primitive "processor:proc1|register16bits_i:RegAddress|Q[0]" is permanently enabled
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "processor:proc1|storeAddress[10]~0" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|storeAddress[9]~1" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|storeAddress[8]~2" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|storeAddress[7]~3" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|storeAddress[6]~4" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|storeAddress[5]~5" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|storeAddress[4]~6" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|storeAddress[3]~7" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|storeAddress[2]~8" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|storeAddress[1]~9" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|storeAddress[0]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|storeAddress[11]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|storeAddress[12]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|storeAddress[13]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|storeAddress[14]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|storeAddress[15]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|s1[0]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|s1[1]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|s1[2]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|s1[3]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|s1[4]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|s1[5]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|s1[6]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|s1[7]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|s1[8]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|s1[9]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|s1[10]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|s1[11]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|s1[12]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|s1[13]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|s1[14]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "processor:proc1|s1[15]" feeding internal logic into a wire
+Info (276014): Found 4 instances of uninferred RAM logic
+    Info (276007): RAM logic "cache:mem1|mem_block:main_memory|Mem" is uninferred due to asynchronous read logic
+    Info (276004): RAM logic "cache:mem1|cache_way:way0|mem_block:cache_v0|Mem" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "cache:mem1|cache_way:way1|mem_block:cache_v0|Mem" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "cache:mem1|mem_block:LRU_mem_v|Mem" is uninferred due to inappropriate RAM size
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/Aluno/Downloads/P4/P4/db/system.ram0_mem_block_4f97bfcc.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch processor:proc1|isStore has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal processor:proc1|estagio_4[12]
+Warning (13012): Latch processor:proc1|ReadAddressRF1[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal processor:proc1|estagio_2[12]
+Warning (13012): Latch processor:proc1|ReadAddressRF1[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal processor:proc1|estagio_2[12]
+Warning (13012): Latch processor:proc1|ReadAddressRF1[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal processor:proc1|estagio_2[12]
+Warning (13012): Latch processor:proc1|ReadAddressRF2[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal processor:proc1|estagio_2[13]
+Warning (13012): Latch processor:proc1|ReadAddressRF2[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal processor:proc1|estagio_2[13]
+Warning (13012): Latch processor:proc1|ReadAddressRF2[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal processor:proc1|estagio_2[13]
+Warning (13012): Latch processor:proc1|writeEnableRegDout has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal processor:proc1|estagio_3[14]
+Warning (13012): Latch processor:proc1|writeEnableRegisterFile4 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal processor:proc1|estagio_4[15]
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX0[7]" is stuck at GND
+    Warning (13410): Pin "HEX1[7]" is stuck at GND
+    Warning (13410): Pin "HEX2[7]" is stuck at GND
+    Warning (13410): Pin "HEX3[7]" is stuck at GND
+    Warning (13410): Pin "HEX4[7]" is stuck at GND
+    Warning (13410): Pin "HEX5[7]" is stuck at GND
+    Warning (13410): Pin "HEX6[0]" is stuck at VCC
+    Warning (13410): Pin "HEX6[1]" is stuck at VCC
+    Warning (13410): Pin "HEX6[2]" is stuck at VCC
+    Warning (13410): Pin "HEX6[3]" is stuck at VCC
+    Warning (13410): Pin "HEX6[4]" is stuck at VCC
+    Warning (13410): Pin "HEX6[5]" is stuck at VCC
+    Warning (13410): Pin "HEX6[6]" is stuck at VCC
+    Warning (13410): Pin "HEX6[7]" is stuck at VCC
+    Warning (13410): Pin "HEX7[0]" is stuck at VCC
+    Warning (13410): Pin "HEX7[1]" is stuck at VCC
+    Warning (13410): Pin "HEX7[2]" is stuck at VCC
+    Warning (13410): Pin "HEX7[3]" is stuck at VCC
+    Warning (13410): Pin "HEX7[4]" is stuck at VCC
+    Warning (13410): Pin "HEX7[5]" is stuck at VCC
+    Warning (13410): Pin "HEX7[6]" is stuck at VCC
+    Warning (13410): Pin "HEX7[7]" is stuck at VCC
+    Warning (13410): Pin "LEDR[2]" is stuck at GND
+    Warning (13410): Pin "LEDR[3]" is stuck at GND
+    Warning (13410): Pin "LEDR[4]" is stuck at GND
+    Warning (13410): Pin "LEDR[5]" is stuck at GND
+    Warning (13410): Pin "LEDR[6]" is stuck at GND
+    Warning (13410): Pin "LEDR[7]" is stuck at GND
+    Warning (13410): Pin "LEDR[8]" is stuck at GND
+    Warning (13410): Pin "LEDR[9]" is stuck at GND
+    Warning (13410): Pin "LEDR[10]" is stuck at GND
+    Warning (13410): Pin "LEDR[11]" is stuck at GND
+    Warning (13410): Pin "LEDR[12]" is stuck at GND
+    Warning (13410): Pin "LEDR[13]" is stuck at GND
+    Warning (13410): Pin "LEDR[14]" is stuck at GND
+    Warning (13410): Pin "LEDR[15]" is stuck at GND
+    Warning (13410): Pin "LEDR[16]" is stuck at GND
+Info (17049): 160 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/Aluno/Downloads/P4/P4/output_files/cache.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 18 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[0]"
+    Warning (15610): No output dependent on input pin "KEY[1]"
+    Warning (15610): No output dependent on input pin "KEY[2]"
+    Warning (15610): No output dependent on input pin "SW[1]"
+    Warning (15610): No output dependent on input pin "SW[2]"
+    Warning (15610): No output dependent on input pin "SW[3]"
+    Warning (15610): No output dependent on input pin "SW[4]"
+    Warning (15610): No output dependent on input pin "SW[5]"
+    Warning (15610): No output dependent on input pin "SW[6]"
+    Warning (15610): No output dependent on input pin "SW[7]"
+    Warning (15610): No output dependent on input pin "SW[8]"
+    Warning (15610): No output dependent on input pin "SW[9]"
+    Warning (15610): No output dependent on input pin "SW[10]"
+    Warning (15610): No output dependent on input pin "SW[11]"
+    Warning (15610): No output dependent on input pin "SW[12]"
+    Warning (15610): No output dependent on input pin "SW[13]"
+    Warning (15610): No output dependent on input pin "SW[14]"
+    Warning (15610): No output dependent on input pin "SW[15]"
+Info (21057): Implemented 2042 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 22 input pins
+    Info (21059): Implemented 82 output pins
+    Info (21061): Implemented 1938 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 166 warnings
+    Info: Peak virtual memory: 4624 megabytes
+    Info: Processing ended: Thu Jul 04 16:20:04 2019
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:06
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Aluno/Downloads/P4/P4/output_files/cache.map.smsg.
+
+

@@ -1,0 +1,79 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do cache_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Aluno/Downloads/Pratica\ 3/Pratica\ 3\ (1)/P3/src {C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/system.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system
+# 
+# Top level modules:
+# 	system
+# vlog -vlog01compat -work work +incdir+C:/Users/Aluno/Downloads/Pratica\ 3/Pratica\ 3\ (1)/P3/src {C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/processor.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module processor
+# -- Compiling module PC_reg7
+# -- Compiling module registerFile
+# -- Compiling module decoder
+# -- Compiling module mux4_1_16bits
+# -- Compiling module register16bits
+# -- Compiling module register16bits_i
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	processor
+# 	mux4_1_16bits
+# vlog -vlog01compat -work work +incdir+C:/Users/Aluno/Downloads/Pratica\ 3/Pratica\ 3\ (1)/P3/src {C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/mem_block.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module mem_block
+# 
+# Top level modules:
+# 	mem_block
+# vlog -vlog01compat -work work +incdir+C:/Users/Aluno/Downloads/Pratica\ 3/Pratica\ 3\ (1)/P3/src {C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/cache_way.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module cache_way
+# 
+# Top level modules:
+# 	cache_way
+# vlog -vlog01compat -work work +incdir+C:/Users/Aluno/Downloads/Pratica\ 3/Pratica\ 3\ (1)/P3/src {C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/src/cache.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module cache
+# 
+# Top level modules:
+# 	cache
+# 
+vsim work.system
+# vsim work.system 
+# Loading work.system
+# Loading work.processor
+# Loading work.PC_reg7
+# Loading work.registerFile
+# Loading work.decoder
+# Loading work.register16bits
+# Loading work.alu
+# Loading work.register16bits_i
+# Loading work.cache
+# Loading work.cache_way
+# Loading work.mem_block
+do {C:/Users/Aluno/Downloads/Pratica 3/Pratica 3 (1)/P3/simulation/modelsim/wave.do}
+# .main_pane.wave.interior.cs.body.pw.wf
+# 0
+run -all
+add wave -position end  sim:/system/mem1/main_memory/addr
+add wave -position end  sim:/system/mem1/main_memory/data
+add wave -position end  sim:/system/mem1/main_memory/wr_en
+add wave -position end  sim:/system/mem1/main_memory/Clock
+add wave -position end  sim:/system/mem1/main_memory/q
+add wave -position end  sim:/system/mem1/main_memory/j
+add wave -position end  sim:/system/mem1/main_memory/Mem
+restart
+run -all
+add wave -position 19  sim:/system/mem1/rw
+add wave -position 20  sim:/system/mem1/Address
