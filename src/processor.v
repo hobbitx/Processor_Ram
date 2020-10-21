@@ -76,7 +76,6 @@ end
     
 always @(posedge Clock)
 	begin
-	
 		estagio_4 = {aluOut,estagio_3[15:0]};
 		if(isLoad)
 			begin
@@ -86,18 +85,14 @@ always @(posedge Clock)
 	if(Daddress == 16'b0001)
 			begin
 				estagio_3 = {DataIn,estagio_2[15:0]};
-				
 			end
 			else
 			begin
 				estagio_3 = {copy,estagio_2[15:0]};
 			end
 			begin 
-				
 				estagio_2 = {estagio_1};
-				
 			end
-			
 			if(estagio_2[15:12] == 4'b1111 || estagio_4[15:12] == 4'b1101)
 				begin
 					estagio_1 = {16'bZ};
@@ -106,7 +101,6 @@ always @(posedge Clock)
 				begin
 					estagio_1 = {DataIn};
 				end	
-
 	end
 always @(estagio_1)
 begin
@@ -198,9 +192,7 @@ isLoad = 1'b0;
 		writeEnableRegisterFile = 1'b0;
       writeEnableRegDout <=1'b0;
     end
-    
 endcase
-
 end
 
 always @(estagio_4)
